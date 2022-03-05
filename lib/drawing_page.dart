@@ -3,14 +3,14 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class DrawPage extends StatefulWidget {
+  const DrawPage({Key? key}) : super(key: key);
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _DrawPageState createState() => _DrawPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _DrawPageState extends State<DrawPage> {
   List<DrawingArea> points = [];
   Color? selectedColor;
   double? strokeWidth;
@@ -230,6 +230,6 @@ class MyCustomPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(MyCustomPainter oldDelegate) {
-    return oldDelegate.points != points;
+    return oldDelegate.points == points;
   }
 }
